@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/seven-project/static/css/main.073c9b0a.css",
+    "main.js": "/seven-project/static/js/main.ab79b3be.js",
+    "static/js/787.99898513.chunk.js": "/seven-project/static/js/787.99898513.chunk.js",
+    "static/media/logo.svg": "/seven-project/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/seven-project/index.html",
+    "main.073c9b0a.css.map": "/seven-project/static/css/main.073c9b0a.css.map",
+    "main.ab79b3be.js.map": "/seven-project/static/js/main.ab79b3be.js.map",
+    "787.99898513.chunk.js.map": "/seven-project/static/js/787.99898513.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.ab79b3be.js"
+  ]
+}
