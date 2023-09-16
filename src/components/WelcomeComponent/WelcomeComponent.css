@@ -1,0 +1,42 @@
+.welcome-div{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome-text{
+    margin: 0;
+    opacity: 0; 
+    animation: fadeIn 2s ease-in-out forwards; 
+    color: white;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+
+.load-buttons{
+    display: flex;
+    flex-direction: column;
+}
+input[type="file"] {
+    display: none;
+}
+
+button{
+    display:none;
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+    cursor: pointer;
+    margin:4px;
+}
