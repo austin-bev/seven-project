@@ -10,7 +10,7 @@
     margin: 0;
     opacity: 0; 
     animation: fadeIn 2s ease-in-out forwards; 
-    color: white;
+    color: var(--text-color);
   }
   
   @keyframes fadeIn {
@@ -35,7 +35,7 @@ button{
 }
 
 .custom-file-upload {
-    border: 1px solid #ccc;
+    border: 1px solid var(--text-color);
     padding: 4px 8px;
     cursor: pointer;
     margin:4px;
