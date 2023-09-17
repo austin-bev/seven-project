@@ -100,7 +100,7 @@ function formatText(text: string, intention: Intention) {
 }
 
 class JsonRenderer extends Component<
-  { toggleTheme: () => void; theme: string },
+  { toggleTheme: () => void; theme: string; fileContents: string | null },
   JsonRendererState
 > {
   constructor(props: any) {
@@ -111,18 +111,29 @@ class JsonRenderer extends Component<
   }
 
   componentDidMount() {
-    fetch(process.env.PUBLIC_URL + "/article.json", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => this.setState({ data }))
-      .catch((error) => console.error("Error:", error));
+    const { toggleTheme, theme, fileContents } = this.props;
+    if (fileContents === null) {
+      fetch(process.env.PUBLIC_URL + "/article.json", {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => this.setState({ data }))
+        .catch((error) => console.error("Error:", error));
+    } else {
+      try {
+        const jsonData = JSON.parse(fileContents);
+        this.setState({ data: jsonData });
+      } catch (error) {
+        console.error("Error parsing JSON:", error);
+      }
+    }
   }
 
   render() {
+    console.log(this.state);
     const { data } = this.state;
 
     if (!data) {

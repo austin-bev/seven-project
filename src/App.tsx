@@ -33,7 +33,13 @@ function App() {
           />
           <Route
             path="/example"
-            element={<JsonRenderer toggleTheme={toggleTheme} theme={theme} />}
+            element={
+              <JsonRenderer
+                toggleTheme={toggleTheme}
+                theme={theme}
+                fileContents={null}
+              />
+            }
           />
         </Routes>
       </div>
