@@ -82,13 +82,13 @@ function formatDate(date: Date) {
   return formattedDate;
 }
 
-function formatText(text : string, intention : Intention) {
+function formatText(text: string, intention: Intention) {
   switch (intention.kind) {
-    case 'important':
+    case "important":
       return <b>{text}</b>;
-    case 'emphasized':
+    case "emphasized":
       return <em>{text}</em>;
-    case 'underline':
+    case "underline":
       return <u>{text}</u>;
     default:
       return text;
@@ -136,9 +136,13 @@ class JsonRenderer extends Component<{}, JsonRendererState> {
             <p>
               <b>{data.byline}</b>, {data.source}
             </p>
-            <p> {formatDate(new Date(data.publicationDate))} <img src="./plus.svg"/></p>
+            <p>
+              {" "}
+              {formatDate(new Date(data.publicationDate))}{" "}
+              <img src="./plus.svg" />
+            </p>
           </div>
-          <hr/>
+          <hr />
           {/* Body */}
           {data.blocks.map((block, index) => (
             <div key={index}>
@@ -147,16 +151,24 @@ class JsonRenderer extends Component<{}, JsonRendererState> {
                 <p>
                   {block.intentions.map((intention, i) => {
                     //Find where the previous intention ended
-                    const textBeforeIndex = i === 0 ? 0 : block.intentions[i - 1].index + block.intentions[i - 1].length;
+                    const textBeforeIndex =
+                      i === 0
+                        ? 0
+                        : block.intentions[i - 1].index +
+                          block.intentions[i - 1].length;
                     //Use that to find all text before intention
-                    const textBefore = block.text.slice(textBeforeIndex, intention.index);
+                    const textBefore = block.text.slice(
+                      textBeforeIndex,
+                      intention.index,
+                    );
                     const emphasizedText = block.text.slice(
                       intention.index,
                       intention.index + intention.length,
                     );
                     return (
                       <React.Fragment key={i}>
-                        {textBefore}{formatText(emphasizedText, intention)}
+                        {textBefore}
+                        {formatText(emphasizedText, intention)}
                       </React.Fragment>
                     );
                   })}

@@ -1,9 +1,9 @@
-.article{
-  margin:1em;
+.article {
+  margin: 1em;
 }
 
-p{
-  margin:0;
+p {
+  margin: 0;
 }
 .header {
   display: flex;
@@ -16,10 +16,10 @@ p{
   font-size: 2em;
   font-weight: 400;
   letter-spacing: -1px;
-  margin-bottom:0.5em;
+  margin-bottom: 0.5em;
 }
 
-.image-container{
+.image-container {
   max-width: 800px; /* Ensure the image doesn't exceed the width of the article */
   overflow-x: auto; /* Add horizontal scrollbar if the image overflows */
   margin: 20px; /* Space between the image and the article content */
