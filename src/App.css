@@ -2,6 +2,8 @@
   --background-color: #ffffff;
   --text-color: #000000;
   background-color: #ffffff;
+  color:#000000;
+  transition: background-color 1s;
 }
 
 /* Dark Theme */
@@ -9,4 +11,6 @@
   --background-color: #121212;
   --text-color: #ffffff;
   background-color: #121212;
+  color:#ffffff;
+  transition: background-color 1s;
 }
