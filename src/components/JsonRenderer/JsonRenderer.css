@@ -1,10 +1,21 @@
+p {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.theme-toggle {
+  position: absolute;
+  right: 1em;
+}
+
 .article {
   margin: 1em;
 }
 
-p {
-  margin: 0;
-}
 .header {
   display: flex;
   flex-direction: column;
@@ -19,35 +30,31 @@ p {
   margin-bottom: 0.5em;
 }
 
-.date-container{
+.date-container {
   display: flex;
 }
-.plus-logo{
+
+.plus-logo {
   width: auto;
   height: 1em;
   margin-left: 0.5em;
 }
 
-.block{
+.block {
   margin-bottom: 1em;
 }
 
 .container {
-  max-width: 50em; 
-  overflow-x: auto; 
-  margin: 2em; 
+  max-width: 50em;
+  overflow-x: auto;
+  margin: 2em;
   width: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-img {
-  width: 100%; /* Make the image responsive within the container */
-  height: auto; /* Maintain the image's aspect ratio */
-}
-
-.quote{
+.quote {
   border-left: 0.5em solid blue;
   align-items: baseline;
   padding-left: 1.5em;
@@ -58,7 +65,7 @@ img {
   font-style: italic;
 }
 
-.quote-attribution{
-  font-size:1em;
-  margin-top: 8px
+.quote-attribution {
+  font-size: 1em;
+  margin-top: 8px;
 }

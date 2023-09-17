@@ -14,3 +14,23 @@
   color: #ffffff;
   transition: background-color 1s;
 }
+
+.themeToggle {
+  position: absolute;
+}
+
+button {
+  display: none;
+}
+
+input {
+  display: none;
+}
+
+.custom-button {
+  border: 1px solid var(--text-color);
+  padding: 4px 8px;
+  cursor: pointer;
+  margin: 4px;
+  text-align: center;
+}

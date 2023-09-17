@@ -99,7 +99,10 @@ function formatText(text: string, intention: Intention) {
   }
 }
 
-class JsonRenderer extends Component<{}, JsonRendererState> {
+class JsonRenderer extends Component<
+  { toggleTheme: () => void; theme: string },
+  JsonRendererState
+> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -108,7 +111,7 @@ class JsonRenderer extends Component<{}, JsonRendererState> {
   }
 
   componentDidMount() {
-    fetch(process.env.PUBLIC_URL+"/article.json", {
+    fetch(process.env.PUBLIC_URL + "/article.json", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -133,6 +136,12 @@ class JsonRenderer extends Component<{}, JsonRendererState> {
         exit={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.5 }}
       >
+        <a
+          className="theme-toggle custom-button"
+          onClick={this.props.toggleTheme}
+        >
+          Toggle Dark Mode
+        </a>
         <div className="article">
           {/* Header */}
           <div className="header">
@@ -142,7 +151,10 @@ class JsonRenderer extends Component<{}, JsonRendererState> {
             </p>
             <div className="date-container">
               <p>{formatDate(new Date(data.publicationDate))}</p>
-              <img className="plus-logo" src={process.env.PUBLIC_URL+"/plus.svg"} />
+              <img
+                className="plus-logo"
+                src={process.env.PUBLIC_URL + "/plus.svg"}
+              />
             </div>
           </div>
           <hr />

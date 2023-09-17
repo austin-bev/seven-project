@@ -31,7 +31,10 @@ function App() {
               <WelcomeComponent toggleTheme={toggleTheme} theme={theme} />
             }
           />
-          <Route path="/example" element={<JsonRenderer />} />
+          <Route
+            path="/example"
+            element={<JsonRenderer toggleTheme={toggleTheme} theme={theme} />}
+          />
         </Routes>
       </div>
     </Router>

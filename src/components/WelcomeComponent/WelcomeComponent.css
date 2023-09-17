@@ -27,18 +27,8 @@
   display: flex;
   flex-direction: column;
 }
-input[type="file"] {
-  display: none;
-}
 
-button {
-  display: none;
-}
-
-.custom-file-upload {
-  border: 1px solid var(--text-color);
-  padding: 4px 8px;
-  cursor: pointer;
-  margin: 4px;
-  text-align: center;
+.theme-toggle {
+  position: absolute;
+  right: 1em;
 }

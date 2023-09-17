@@ -24,7 +24,9 @@ function WelcomeComponent(props: any) {
       transition={{ duration: 0.5 }}
     >
       <div>
-        <a onClick={props.toggleTheme}>Toggle Dark Mode</a>
+        <a className="theme-toggle custom-button" onClick={props.toggleTheme}>
+          Toggle Dark Mode
+        </a>
         <div className="welcome-div">
           <h1 className="welcome-text">News Renderer</h1>
           <h4 className="welcome-text">Upload a file to begin</h4>
@@ -35,13 +37,13 @@ function WelcomeComponent(props: any) {
             <div className="load-buttons">
               <label
                 htmlFor="file-upload"
-                className="custom-file-upload welcome-text"
+                className="custom-button welcome-text"
               >
                 Select .json file
               </label>
               <label
                 htmlFor="load-example"
-                className="custom-file-upload welcome-text"
+                className="custom-button welcome-text"
               >
                 Load example
               </label>
