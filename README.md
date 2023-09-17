@@ -67,3 +67,4 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### `npm run deploy`
+Deploys the application to [https://austin-bev.github.io/seven-project/]https://austin-bev.github.io/seven-project/
