@@ -104,7 +104,7 @@ class JsonRenderer extends Component<{}, JsonRendererState> {
   }
 
   componentDidMount() {
-    fetch("./article.json", {
+    fetch(process.env.PUBLIC_URL+"/article.json", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -136,11 +136,10 @@ class JsonRenderer extends Component<{}, JsonRendererState> {
             <p>
               <b>{data.byline}</b>, {data.source}
             </p>
-            <p>
-              {" "}
+            <span>
               {formatDate(new Date(data.publicationDate))}{" "}
-              <img src="./plus.svg" />
-            </p>
+              <img className="plus-logo" src={process.env.PUBLIC_URL+"/plus.svg"} />
+            </span>
           </div>
           <hr />
           {/* Body */}

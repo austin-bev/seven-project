@@ -20,6 +20,12 @@ function App() {
       <div className={theme}>
         <Routes>
           <Route
+            path="/seven-project"
+            element={
+              <WelcomeComponent toggleTheme={toggleTheme} theme={theme} />
+            }
+          />
+          <Route
             path="/"
             element={
               <WelcomeComponent toggleTheme={toggleTheme} theme={theme} />

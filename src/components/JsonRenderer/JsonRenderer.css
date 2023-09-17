@@ -19,6 +19,11 @@ p {
   margin-bottom: 0.5em;
 }
 
+.plus-logo{
+  display: inline;
+  height: 1em;
+}
+
 .image-container {
   max-width: 800px; /* Ensure the image doesn't exceed the width of the article */
   overflow-x: auto; /* Add horizontal scrollbar if the image overflows */
