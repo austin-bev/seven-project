@@ -48,6 +48,10 @@ function isImageBlock(block: Block): block is ImageBlock {
   return block.kind === "image";
 }
 
+function isQuoteBlock(block: Block): block is QuoteBlock {
+  return block.kind === "pull-quote";
+}
+
 function formatDate(date: Date) {
   const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const months = [
@@ -134,17 +138,17 @@ class JsonRenderer extends Component<{}, JsonRendererState> {
           <div className="header">
             <p className="headline">{data.headline}</p>
             <p>
-              <b>{data.byline}</b>, {data.source}
+              <b>{data.byline}</b>, <em>{data.source}</em>
             </p>
-            <span>
-              {formatDate(new Date(data.publicationDate))}{" "}
+            <div className="date-container">
+              <p>{formatDate(new Date(data.publicationDate))}</p>
               <img className="plus-logo" src={process.env.PUBLIC_URL+"/plus.svg"} />
-            </span>
+            </div>
           </div>
           <hr />
           {/* Body */}
           {data.blocks.map((block, index) => (
-            <div key={index}>
+            <div className="block" key={index}>
               {/* Text Blocks */}
               {isTextBlock(block) && (
                 <p>
@@ -180,11 +184,18 @@ class JsonRenderer extends Component<{}, JsonRendererState> {
                   )}
                 </p>
               )}
-
+              {/* Image Blocks */}
               {isImageBlock(block) && (
-                <div className="image-container">
+                <div className="container">
                   <img src={block.url} alt={block.captionText} />
                   <p>{block.captionText}</p>
+                </div>
+              )}
+              {/* Quote Blocks */}
+              {isQuoteBlock(block) && (
+                <div className="container quote">
+                  <p className="quote-text">{block.text}</p>
+                  <p className="quote-attribution">{block.attribution}</p>
                 </div>
               )}
             </div>
